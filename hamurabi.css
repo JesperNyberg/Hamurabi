@@ -20,7 +20,7 @@ h1 {
 #economy {
   display: block;
   padding-left: 0;
-  border: black 1px solid;
+  border: blue 1px solid;
   list-style: none; /* a list with no visible item markers */
   background-color: yellow;
 }
