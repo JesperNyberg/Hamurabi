@@ -1,5 +1,10 @@
 /* Jesper Nyberg 0106055973 */
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;500;700&display=swap%27");
+:root {
+  --yellow: #e9de9e;
+  --red: #c64735;
+  --blue: #54665d;
+}
 * {
   font-family: "JetBrains Mono", monospace;
 }
@@ -9,33 +14,44 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
+  width: 100%;
   height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 h1 {
   color: black;
-  text-decoration: underline;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 #people {
   display: block;
   padding-left: 0;
-  border: black 1px solid;
+
   list-style: none;
 }
 
 #people li {
   display: inline;
   margin-right: 10px;
-  border: black 1px solid;
 }
 
 #economy {
   display: block;
   padding-left: 0;
-  border: blue 1px solid;
+
   list-style: none; /* a list with no visible item markers */
-  background-color: yellow;
 }
 
 #economy li {
