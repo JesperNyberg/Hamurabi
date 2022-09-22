@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <title>Hammurabi</title>
     <link rel="stylesheet" type="text/css" href="./hamurabi.css" />
-    <script type="text/javascript" src="./hamurabi.js"></script>
+    <script type="text/javascript" src="./hamurabi.js" defer></script>
   </head>
 
   <body onload="gameStart();">
@@ -107,12 +107,69 @@
           Detta är min order!
         </button>
 
-        <button type="button">Help</button>
+        <button type="button" id="help">Help</button>
       </form>
     </section>
-    <!--  -->
-    <!--  -->
-    <!--  -->
-    <section></section>
+
+    <section>
+      <h1>Historia!</h1>
+
+      <p>
+        Försök att lyckas styra den forna Sumeria i 10 år. En av de tidigaste<br />
+        datorspelen, "the game Hammurabi" är den föregångare av den
+        strategiska<br />
+        genren för moderna datorspel idag. Namnet Hammurabi kom från den<br />
+        Babyloniska kungen från det andra millenniet f.Kr känd för att
+        kodifiera<br />
+        lagar, vilket också kallas för “The Code of Hammurabi”.
+      </p>
+
+      <p>
+        Spelet varar i<br />
+        10 år och varje år bestämmer du, vilket i detta fall ersätter rollen
+        av<br />
+        Hammurabi att fördela resurser. Resurser som dina skräppor av
+        spannmål,<br />
+        de tunnland som ska köpas och säljas, spannmål som ska planteras samt<br />
+        ansvaret att mata din befolkning.
+      </p>
+
+      <div>
+        <img src="./assets/img/historia.jpg" alt="" />
+      </div>
+    </section>
+
+    <div class="hide" id="popup-container">
+      <div id="popup">
+        <h3>Regler</h3>
+
+        <ul>
+          <li>Spelet varar 10 år, då varje år räknas som en runda.</li>
+          <li>
+            Varje år skriver du hur många skäppor av spannmål och <br />
+            mängden tunnland som ska köpas och säljas.
+          </li>
+          <li>
+            Varje år skriver du hur mycket av din befolkning <br />
+            som ska matas och hur mycket spannmål som ska odlas till nästa år.
+          </li>
+          <li>Varje tunnland behöver en skräppa för att odla spannmål.</li>
+          <li>
+            Priset på varje tunnland varierar från 17 skäppor till 26 skäppor.
+          </li>
+          <li>
+            Om ditt land och dess villkor någonsin blir illa nog <br />
+            avsätts du som ledare och förlorar spelet.
+          </li>
+          <li>
+            Om ditt ledarskap varar upp till 11 år kommer du att anses <br />
+            som en av de största figurerna historien har upplevt.
+          </li>
+        </ul>
+        <div id="close">X</div>
+      </div>
+    </div>
+
+    <div id="midline" />
   </body>
 </html>

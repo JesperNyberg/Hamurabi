@@ -1,32 +1,60 @@
 /* Jesper Nyberg 0106055973 */
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;500;700&display=swap%27");
+@font-face {
+  font-family: JetBrains;
+  src: url("./assets/fonts/JetBrainsThin.ttf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: JetBrains;
+  src: url("./assets/fonts/JetBrainsReg.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: JetBrains;
+  src: url("./assets/fonts/JetBrainsBold.ttf");
+  font-weight: 700;
+}
 :root {
   --yellow: #e9de9e;
-  --red: #c64735;
-  --blue: #54665d;
 }
 * {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "JetBrains", monospace;
 }
 body {
-  background-image: url("./assets/bg.jpg");
+  background-image: url("./assets/img/bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
   width: 100%;
   height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
 }
+/* sätter bakgrundsbild, skapar två kolumner. */
 
 section {
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
+  padding: 100px 0;
+  flex: 1;
+}
+
+/* centrerar innehåll, ger lika mycket plats åt båda se */
+
+section > div {
+  width: 70%;
+  height: auto;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+section > div > img {
+  width: 100%;
 }
 
 h1 {
@@ -65,4 +93,72 @@ h1 {
 button {
   margin: 30px 25px 0 0;
   padding: 10px 15px;
+  background: #101010;
+  color: #f1f1f1;
+  cursor: pointer;
+}
+button:hover {
+  background: #282828;
+}
+
+#popup-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+/* blurrar bakom help fönstret, flyttar det på plats */
+#popup {
+  background-color: #e9de9e;
+  -webkit-box-shadow: 0px 6px 24px 13px #101010;
+  box-shadow: 0px 6px 24px 13px #101010;
+  border-radius: 25px;
+  padding: 15px;
+  position: relative;
+}
+/* gör att det skuggar bakom help fönstret */
+#popup > h3 {
+  text-align: center;
+}
+/* kod som endast fokuserar på titel i pop up */
+#popup > ul > li {
+  margin-top: 10px;
+}
+/* Gör alla punkter i help mer isär och lättläst */
+#close {
+  position: absolute;
+  top: 25px;
+  right: 50px;
+  cursor: pointer;
+  padding: 10px;
+  transition: all 0.1s ease-in-out;
+  border-radius: 100px;
+}
+/* krysset i help fönstret */
+#close:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+/* gör bakgrund för krysset i help rutan */
+.hide {
+  display: none !important;
+}
+/* id för att kryssa ner help */
+
+#midline {
+  width: 2px;
+  height: 66vh;
+  background: #101010;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 10px;
 }

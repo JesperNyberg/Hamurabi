@@ -427,3 +427,15 @@ function finishTurn() {
     gameStart();
   }
 }
+
+const popUpContainer = document.getElementById("popup-container"); //hämtar element med id:et "popup-container" och sparar den som en variabel
+
+const closeButton = document.getElementById("close"); // hämtar elemnt med id "close"
+closeButton.addEventListener("click", () => {
+  popUpContainer.classList.toggle("hide");
+}); //lyssnar på klick från close knappen för att toggla klassen "hide", öppnar fönstret
+
+const helpButton = document.getElementById("help");
+helpButton.addEventListener("click", () => {
+  popUpContainer.classList.toggle("hide"); //Lyssnar efter klick från help knappen för att toggla klassen "hide", stänger fönstret
+});
