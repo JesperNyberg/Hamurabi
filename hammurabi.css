@@ -1,12 +1,6 @@
 /* Jesper Nyberg 0106055973 */
 @font-face {
   font-family: JetBrains;
-  src: url("./assets/fonts/JetBrainsThin.ttf");
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: JetBrains;
   src: url("./assets/fonts/JetBrainsReg.ttf");
   font-weight: 400;
 }
@@ -26,21 +20,20 @@ body {
   background-image: url("./assets/img/bg.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   overflow: hidden;
   width: 100%;
   height: 100vh;
   display: flex;
 }
-/* sätter bakgrundsbild, skapar två kolumner. */
+/* sätter bakgrundsbild,  */
 
 section {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 1rem;
-  padding: 100px 0;
+  gap: 16px;
+  padding: 100px 110px;
   flex: 1;
 }
 
@@ -52,10 +45,12 @@ section > div {
   max-height: 300px;
   overflow: hidden;
 }
+/* "Ramen för bilden" */
 
 section > div > img {
   width: 100%;
 }
+/* självaste bilden */
 
 h1 {
   color: black;
@@ -88,6 +83,10 @@ h1 {
 
 .fieldset {
   border-style: none; /* without this property, the slider area gets a border */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 button {
@@ -96,7 +95,9 @@ button {
   background: #101010;
   color: #f1f1f1;
   cursor: pointer;
+  border: none;
 }
+
 button:hover {
   background: #282828;
 }
@@ -114,7 +115,7 @@ button:hover {
   z-index: 1;
 }
 
-/* blurrar bakom help fönstret, flyttar det på plats */
+/* Abosolut position, har prio. z index = sträck bakom. */
 #popup {
   background-color: #e9de9e;
   -webkit-box-shadow: 0px 6px 24px 13px #101010;
@@ -123,7 +124,8 @@ button:hover {
   padding: 15px;
   position: relative;
 }
-/* gör att det skuggar bakom help fönstret */
+
+/* gör att det skuggar bakom hela fönstret. Relativ, X innanför rutan */
 #popup > h3 {
   text-align: center;
 }
@@ -149,7 +151,7 @@ button:hover {
 .hide {
   display: none !important;
 }
-/* id för att kryssa ner help */
+/* id för att kryssa ner help, !import prioriteras */
 
 #midline {
   width: 2px;
@@ -161,4 +163,39 @@ button:hover {
   top: 50%;
   transform: translateY(-50%);
   border-radius: 10px;
+}
+
+/* när skärmen är mindre än 1280px prioritera dessa styles */
+@media (max-width: 1280px) {
+  /* sänk gap, öka padding */
+  section {
+    padding: 75px 50px;
+    gap: 5px;
+  }
+
+  /* sänk margin */
+  h1,
+  h2,
+  h3,
+  p,
+  ul,
+  li {
+    margin: 8px;
+  }
+
+  /* sänk margin */
+  button {
+    margin: 10px;
+  }
+
+  /* sänk textstorlek */
+  p {
+    font-size: 14px;
+  }
+
+  /* centrera bild */
+  section > div {
+    display: flex;
+    justify-content: center;
+  }
 }
