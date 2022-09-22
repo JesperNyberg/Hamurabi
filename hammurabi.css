@@ -166,7 +166,7 @@ button:hover {
 }
 
 /* när skärmen är mindre än 1280px prioritera dessa styles */
-@media (max-width: 1280px) {
+@media (max-width: 1536px) {
   /* sänk gap, öka padding */
   section {
     padding: 75px 50px;
